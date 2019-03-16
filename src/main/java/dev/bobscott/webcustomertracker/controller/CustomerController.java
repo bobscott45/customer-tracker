@@ -9,8 +9,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 @Controller
+@RequestMapping("/customer")
 public class CustomerController {
-    @RequestMapping("/testit")
+    @RequestMapping("/list")
     public String test() {
         return "list-customers";
     }
