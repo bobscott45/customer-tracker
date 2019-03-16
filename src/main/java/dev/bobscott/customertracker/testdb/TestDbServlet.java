@@ -1,4 +1,4 @@
-package dev.bobscott.webcustomertracker.testdb;
+package dev.bobscott.customertracker.testdb;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
