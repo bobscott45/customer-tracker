@@ -4,36 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <title>List Customers</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bulma.css">
 </head>
 <body>
-<div id="wrapper">
-    <div id="header">
-        <h2>CRM - Customer Relationship Manager</h2>
-    </div>
-</div>
-<div id="container">
-    <div id="content">
-        <p>
-            <a href="add" class="add-button">Add customer</a>
-        </p>
-
-        <table>
-            <tr>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>email</td>
-            </tr>
-            <c:forEach items="${customers}" var="customer">
+    <section class="hero is-light is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <div class="title">
+                    CRM - Customer Relationship Manager
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section ">
+        <h2 class="title">Customers</h2>
+        <a href="add" class="button is-light">Add customer</a>
+        <div id="container">
+            <table class="table is-striped">
+                <thead>
                 <tr>
-                    <td>${customer.firstName}</td>
-                    <td>${customer.lastName}</td>
-                    <td>${customer.email}</td>
+                    <th>First Name</td>
+                    <th>Last Name</th>
+                    <th>email</th>
                 </tr>
-            </c:forEach>
-        </table>
-    </div>
-</div>
-
+                </thead>
+                <c:forEach items="${customers}" var="customer">
+                    <tr>
+                        <td>${customer.firstName}</td>
+                        <td>${customer.lastName}</td>
+                        <td>${customer.email}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </section>
 </body>
 </html>
