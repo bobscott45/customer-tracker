@@ -42,12 +42,11 @@
             </div>
             <div class="field">
                 <form:label path="email" class="label">Email</form:label>
-                <div class="control">
-                    <form:input path="email" class="input has-icons-left"/>
+                <div class="control has-icons-left">
+                    <form:input path="email" class="input"/>
                         <span class="icon is-small is-left">
                             <i class="fas fa-envelope"></i>
                         </span>
-
                 </div>
             </div>
             <div class="field">
