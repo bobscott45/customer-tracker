@@ -27,7 +27,9 @@ public class CustomerController {
     }
 
     @GetMapping("/add")
-    public String showAddCustomer() {
+    public String showAddCustomer(Model model) {
+        Customer customer = new Customer();
+        model.addAttribute("customer", customer);
         return "add-customer";
     }
 }
