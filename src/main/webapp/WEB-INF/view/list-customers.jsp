@@ -14,6 +14,10 @@
 </div>
 <div id="container">
     <div id="content">
+        <p>
+            <a href="add" class="add-button">Add customer</a>
+        </p>
+
         <table>
             <tr>
                 <td>First Name</td>
