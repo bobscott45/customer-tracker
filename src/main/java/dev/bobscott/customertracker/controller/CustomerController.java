@@ -25,4 +25,9 @@ public class CustomerController {
         model.addAttribute("customers", customers);
         return "list-customers";
     }
+
+    @GetMapping("/add")
+    public String showAddCustomer() {
+        return "add-customer";
+    }
 }
