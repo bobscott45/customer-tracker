@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>List Customers</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/all.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bulma.css">
 </head>
 <body>
@@ -17,15 +18,16 @@
         </div>
     </section>
     <section class="section ">
-        <h2 class="title">Customers</h2>
-        <a href="add" class="button is-light">Add customer</a>
         <div id="container">
+            <h2 class="title is-4">Customers</h2>
+            <a href="add" class="button is-link">Add customer</a>
+
             <table class="table is-striped">
                 <thead>
                 <tr>
                     <th>First Name</td>
                     <th>Last Name</th>
-                    <th>email</th>
+                    <th>Email</th>
                 </tr>
                 </thead>
                 <c:forEach items="${customers}" var="customer">
