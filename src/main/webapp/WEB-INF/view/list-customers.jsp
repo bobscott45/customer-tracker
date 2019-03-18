@@ -2,13 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>List Customers</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/all.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bulma.css">
 </head>
 <body>
-    <section class="hero is-light is-bold">
+    <section class="hero is-light is-bold is-small">
         <div class="hero-body">
             <div class="container">
                 <div class="title">
@@ -18,7 +19,7 @@
         </div>
     </section>
     <section class="section ">
-        <div id="container">
+        <div class="container">
             <h2 class="title is-4">Customers</h2>
             <a href="add" class="button is-link">Add customer</a>
 
