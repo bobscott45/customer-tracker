@@ -9,37 +9,59 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bulma.css">
 </head>
 <body>
-    <section class="hero is-light is-bold is-small">
-        <div class="hero-body">
-            <div class="container">
-                <div class="title">
-                    CRM - Customer Relationship Manager
-                </div>
+<section class="hero is-light is-bold is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="title">
+                CRM - Customer Relationship Manager
             </div>
         </div>
-    </section>
-    <section class="section ">
-        <div class="container">
-            <h2 class="title is-4">Customers</h2>
-            <a href="add" class="button is-link">Add customer</a>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-6 is-offset-3">
+                <div class="panel">
+                    <h2 class="panel-heading">Customers</h2>
+                    <c:forEach items="${customers}" var="customer">
 
-            <table class="table is-striped">
-                <thead>
-                <tr>
-                    <th>First Name</td>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                </tr>
-                </thead>
-                <c:forEach items="${customers}" var="customer">
-                    <tr>
-                        <td>${customer.firstName}</td>
-                        <td>${customer.lastName}</td>
-                        <td>${customer.email}</td>
-                    </tr>
-                </c:forEach>
-            </table>
+                        <div class="panel-block" style="display:block">
+                            <div class="level">
+                                <div class="level-left">
+                                    <div class="level-item">${customer.firstName} ${customer.lastName} [email:${customer.email}]</div>
+                                </div>
+                                <div class="level-right">
+                                    <div class="level-item"><a href="#"><i class="fas fa-edit"></i></a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </c:forEach>
+
+
+                    <div class="panel-tabs">
+                        <a href="add">add customer</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <%--<c:forEach items="${customers}" var="customer">--%>
+            <%--<div class="panel-block">--%>
+            <%--<nav class="level">--%>
+            <%--<div class="level-left">--%>
+            <%--<p class="level-item"><span>${customer.firstName} ${customer.lastName} (${customer.email})</span></p>--%>
+            <%--</div>--%>
+            <%--<div class="level-right">--%>
+            <%--<p class="level-item"><span>edit</span></p>--%>
+            <%--</div>--%>
+            <%--</nav>--%>
+            <%--</div>--%>
+            <%--</c:forEach>--%>
+
         </div>
-    </section>
+    </div>
+</section>
 </body>
 </html>

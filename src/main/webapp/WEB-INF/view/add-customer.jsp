@@ -28,44 +28,46 @@
 
 <section class="section">
     <div class="container">
-        <div class="panel">
-            <h2 class="panel-heading">Add Customer</h2>
-            <div class="panel-block">
-
-                <form:form method="post" modelAttribute="customer" action="add" >
-                    <div class="field">
-                        <form:label path="firstName" class="label">First name</form:label>
-                        <div class="control">
-                            <form:input path="firstName" class="input"></form:input>
-                        </div>
+        <div class="columns">
+            <div class="column is-6 is-offset-3">
+                <div class="panel">
+                    <h2 class="panel-heading">Add Customer</h2>
+                    <div class="panel-block">
+                        <form:form method="post" modelAttribute="customer" action="add" >
+                            <div class="field">
+                                <form:label path="firstName" class="label">First name</form:label>
+                                <div class="control">
+                                    <form:input path="firstName" class="input" size="45"></form:input>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <form:label path="lastName" class="label">Last name</form:label>
+                                <div class="control">
+                                    <form:input path="lastName" class="input" size="45"></form:input>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <form:label type="email"    path="email" class="label">Email</form:label>
+                                <div class="control has-icons-left">
+                                    <form:input path="email" class="input" size="45"/>
+                                    <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <form:button class="button is-primary">Submit</form:button>
+                                </div>
+                            </div>
+                        </form:form>
                     </div>
-                    <div class="field">
-                        <form:label path="lastName" class="label">Last name</form:label>
-                        <div class="control">
-                            <form:input path="lastName" class="input"></form:input>
-                        </div>
+                    <div class="panel-tabs">
+                        <a href="${pageContext.request.contextPath}/customer/list">customer list</a>
                     </div>
-                    <div class="field">
-                        <form:label type="email"    path="email" class="label">Email</form:label>
-                        <div class="control has-icons-left">
-                            <form:input path="email" class="input"/>
-                            <span class="icon is-small is-left">
-                            <i class="fas fa-envelope"></i>
-                        </span>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="control">
-                            <form:button class="button is-primary">Submit</form:button>
-                        </div>
-                    </div>
-                </form:form>
-            </div>
-                <div class="panel-tabs">
-                    <a href="${pageContext.request.contextPath}/customer/list">customer list</a>
                 </div>
+            </div>
         </div>
-
     </div>
 </section>
 </body>
