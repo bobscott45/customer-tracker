@@ -28,12 +28,12 @@ public class CustomerController {
     public String showAddCustomer(Model model) {
         Customer customer = new Customer();
         model.addAttribute("customer", customer);
-        return "add-customer";
+        return "edit-customer";
     }
 
     @PostMapping("/customer")
     public String saveCustomer(@ModelAttribute("customer") Customer customer) {
-        customerService.addCustomer(customer);
+        customerService.saveCustomer(customer);
         return ("redirect:/customers");
     }
 
@@ -43,15 +43,4 @@ public class CustomerController {
         model.addAttribute("customer", customer);
         return "edit-customer";
     }
-
-    @PostMapping("/customer/{id}")
-    public String saveEditCustomer(@PathVariable("id") String id, @ModelAttribute("customer") Customer customer) {
-        System.out.println("ID:" + id);
-        customer.setId(Long.parseLong(id));
-        customerService.addCustomer(customer);
-        System.out.println(customer);
-        return ("redirect:/customers");
-    }
-
-
 }

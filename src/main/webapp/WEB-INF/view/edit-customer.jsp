@@ -9,7 +9,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Add Customer</title>
+    <title>Customer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/all.css">
@@ -31,9 +31,10 @@
         <div class="columns">
             <div class="column is-6 is-offset-3">
                 <div class="panel">
-                    <h2 class="panel-heading">Edit Customer</h2>
+                    <h2 class="panel-heading">${customer.id>0 ? "Edit" : "Add"} Customer</h2>
                     <div class="panel-block">
-                        <form:form method="post" modelAttribute="customer" action="${customer.id}" >
+                        <form:form method="post" modelAttribute="customer" action="${pageContext.request.contextPath}/customer" >
+                            <form:hidden path="id"></form:hidden>
                             <div class="field">
                                 <form:label path="firstName" class="label">First name</form:label>
                                 <div class="control">
