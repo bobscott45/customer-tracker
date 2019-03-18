@@ -29,7 +29,9 @@
                         <div class="panel-block" style="display:block">
                             <div class="level">
                                 <div class="level-left">
-                                    <div class="level-item">${customer.firstName} ${customer.lastName} [email:${customer.email}]</div>
+                                    <div class="level-item">${customer.firstName} ${customer.lastName}
+                                        [email:${customer.email}]
+                                    </div>
                                 </div>
                                 <div class="level-right">
                                     <div class="level-item"><a href="#"><i class="fas fa-edit"></i></a></div>
@@ -46,19 +48,6 @@
                 </div>
 
             </div>
-
-            <%--<c:forEach items="${customers}" var="customer">--%>
-            <%--<div class="panel-block">--%>
-            <%--<nav class="level">--%>
-            <%--<div class="level-left">--%>
-            <%--<p class="level-item"><span>${customer.firstName} ${customer.lastName} (${customer.email})</span></p>--%>
-            <%--</div>--%>
-            <%--<div class="level-right">--%>
-            <%--<p class="level-item"><span>edit</span></p>--%>
-            <%--</div>--%>
-            <%--</nav>--%>
-            <%--</div>--%>
-            <%--</c:forEach>--%>
 
         </div>
     </div>
