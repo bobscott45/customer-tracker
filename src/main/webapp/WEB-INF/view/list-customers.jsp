@@ -25,7 +25,7 @@
                 <div class="panel">
                     <h2 class="panel-heading">Customers</h2>
                     <div class="panel-tabs">
-                        <a href="customer">add customer</a>
+                        <a href="customer" style="margin-left:auto">add customer</a>
                     </div>
                     <c:forEach items="${customers}" var="customer">
 
