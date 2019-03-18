@@ -31,9 +31,9 @@
         <div class="columns">
             <div class="column is-6 is-offset-3">
                 <div class="panel">
-                    <h2 class="panel-heading">New Customer</h2>
+                    <h2 class="panel-heading">Edit Customer</h2>
                     <div class="panel-block">
-                        <form:form method="post" modelAttribute="customer" action="" >
+                        <form:form method="post" modelAttribute="customer" action="${customer.id}" >
                             <div class="field">
                                 <form:label path="firstName" class="label">First name</form:label>
                                 <div class="control">

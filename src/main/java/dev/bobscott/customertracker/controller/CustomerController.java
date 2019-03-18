@@ -1,42 +1,57 @@
 package dev.bobscott.customertracker.controller;
 
-import dev.bobscott.customertracker.dao.CustomerDAO;
 import dev.bobscott.customertracker.entity.Customer;
 import dev.bobscott.customertracker.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/customer")
 public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping("/list")
+    @GetMapping("/customers")
     public String listCustomers(Model model) {
         List<Customer> customers = customerService.getCustomers();
+        customers.sort((c1, c2) ->  c1.getLastName().compareTo(c2.getLastName()));
         model.addAttribute("customers", customers);
         return "list-customers";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/customer")
     public String showAddCustomer(Model model) {
         Customer customer = new Customer();
         model.addAttribute("customer", customer);
         return "add-customer";
     }
 
-    @PostMapping("/add")
-    public RedirectView addCustomer(Model model) {
-        return new RedirectView("list");
+    @PostMapping("/customer")
+    public String saveCustomer(@ModelAttribute("customer") Customer customer) {
+        customerService.addCustomer(customer);
+        return ("redirect:/customers");
     }
+
+    @GetMapping("/customer/{id}")
+    public String showEditCustomer(@PathVariable("id") String id, Model model) {
+        Customer customer = customerService.getCustomer(Long.parseLong(id));
+        model.addAttribute("customer", customer);
+        return "edit-customer";
+    }
+
+    @PostMapping("/customer/{id}")
+    public String saveEditCustomer(@PathVariable("id") String id, @ModelAttribute("customer") Customer customer) {
+        System.out.println("ID:" + id);
+        customer.setId(Long.parseLong(id));
+        customerService.addCustomer(customer);
+        System.out.println(customer);
+        return ("redirect:/customers");
+    }
+
+
 }

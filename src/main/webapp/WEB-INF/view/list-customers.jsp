@@ -24,6 +24,9 @@
             <div class="column is-6 is-offset-3">
                 <div class="panel">
                     <h2 class="panel-heading">Customers</h2>
+                    <div class="panel-tabs">
+                        <a href="customer">add customer</a>
+                    </div>
                     <c:forEach items="${customers}" var="customer">
 
                         <div class="panel-block" style="display:block">
@@ -34,17 +37,13 @@
                                     </div>
                                 </div>
                                 <div class="level-right">
-                                    <div class="level-item"><a href="#"><i class="fas fa-edit"></i></a></div>
+                                    <div class="level-item"><a href="customer/${customer.id}"><i class="fas fa-edit"></i></a></div>
                                 </div>
                             </div>
 
                         </div>
                     </c:forEach>
 
-
-                    <div class="panel-tabs">
-                        <a href="add">add customer</a>
-                    </div>
                 </div>
 
             </div>
