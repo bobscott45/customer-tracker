@@ -37,6 +37,7 @@
                                     </div>
                                 </div>
                                 <div class="level-right">
+                                    <div class="level-item"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
                                     <div class="level-item"><a href="customer/${customer.id}"><i class="fas fa-edit"></i></a></div>
                                 </div>
                             </div>
