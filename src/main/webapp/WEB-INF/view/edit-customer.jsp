@@ -31,9 +31,9 @@
         <div class="columns">
             <div class="column is-6 is-offset-3">
                 <div class="panel">
-                    <h2 class="panel-heading">${customer.id>0 ? "Edit" : "Add"} Customer</h2>
+                    <h2 class="panel-heading">${customer.id>0 ? "Edit" : "New"} Customer</h2>
                     <div class="panel-block">
-                        <form:form method="post" modelAttribute="customer" action="${pageContext.request.contextPath}/customer" >
+                        <form:form method="post" modelAttribute="customer" action="${pageContext.request.contextPath}/customers/update" >
                             <form:hidden path="id"></form:hidden>
                             <div class="field">
                                 <form:label path="firstName" class="label">First name</form:label>

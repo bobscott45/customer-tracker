@@ -25,7 +25,7 @@
                 <div class="panel">
                     <h2 class="panel-heading">Customers</h2>
                     <div class="panel-tabs">
-                        <a href="customer" style="margin-left:auto">add customer</a>
+                        <a href="customers/new" style="margin-left:auto">add customer</a>
                     </div>
                     <c:forEach items="${customers}" var="customer">
 
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="level-right">
                                     <div class="level-item"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
-                                    <div class="level-item"><a href="customer/${customer.id}"><i class="fas fa-edit"></i></a></div>
+                                    <div class="level-item"><a href="customers/${customer.id}"><i class="fas fa-edit"></i></a></div>
                                 </div>
                             </div>
 
