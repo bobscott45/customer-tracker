@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>List Customers</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/all.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bulma.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/buefy.min.css">
 </head>
 <body>
 <section class="hero is-light is-bold is-small">
@@ -18,7 +18,7 @@
         </div>
     </div>
 </section>
-<section class="section">
+<section id="app" class="section">
     <div class="container">
         <div class="columns">
             <div class="column is-6 is-offset-3">
@@ -37,8 +37,8 @@
                                     </div>
                                 </div>
                                 <div class="level-right">
-                                    <div class="level-item"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
-                                    <div class="level-item"><a href="customers/${customer.id}"><i class="fas fa-edit"></i></a></div>
+                                    <div class="level-item"><a href="#"><i class="fas fa-trash-alt" v-on:click="confirm"></i></a></div>
+                                    <div class="level-item"><a href="customers/${customer.id}" ><i class="fas fa-edit"></i></a></div>
                                 </div>
                             </div>
 
@@ -52,5 +52,20 @@
         </div>
     </div>
 </section>
+<script src="${pageContext.request.contextPath}/resources/js/vue.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/buefy.min.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            confirm: function() {
+                alert("click");
+            }
+        }
+    });
+
+</script>
+
 </body>
 </html>
