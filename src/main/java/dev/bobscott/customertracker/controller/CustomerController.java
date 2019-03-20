@@ -40,9 +40,16 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public String editCustomer(@PathVariable("id") String id, Model model) {
-        Customer customer = customerService.getCustomer(Long.parseLong(id));
+    public String editCustomer(@PathVariable("id") Long id, Model model) {
+        Customer customer = customerService.getCustomer(id);
         model.addAttribute("customer", customer);
         return "edit-customer";
+    }
+
+    @GetMapping("/{id}/del")
+    public String deleteCustomer(@PathVariable("id") Long id) {
+        customerService.deleteCustomer(id);
+        return ("redirect:/customers");
+
     }
 }
