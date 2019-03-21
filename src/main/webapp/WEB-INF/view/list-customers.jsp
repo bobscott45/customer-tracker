@@ -21,7 +21,7 @@
 <section id="app" class="section">
     <div class="container">
         <div class="columns">
-            <div class="column is-4 is-offset-4">
+            <div class="column is-6 is-offset-3">
                 <div class="panel">
                     <h2 class="panel-heading">Customers</h2>
                     <div class="panel-tabs">
@@ -32,9 +32,7 @@
                         <div class="panel-block" style="display:block">
                             <div class="level">
                                 <div class="level-left">
-                                    <div class="level-item">${customer.name}
-                                        [email:${customer.email}]
-                                    </div>
+                                    <div class="level-item">${customer.name}</div>
                                 </div>
                                 <div class="level-right">
                                     <div class="level-item"><a href="#"><i class="fas fa-trash-alt" v-on:click="confirm($event, ${customer.id}, '${customer.name}')"></i></a></div>
