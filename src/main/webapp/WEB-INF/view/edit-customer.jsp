@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/all.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bulma.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/buefy.min.css">
 </head>
 <body>
 <section class="hero is-light is-bold is-small">

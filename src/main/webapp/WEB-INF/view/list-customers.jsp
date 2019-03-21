@@ -32,12 +32,12 @@
                         <div class="panel-block" style="display:block">
                             <div class="level">
                                 <div class="level-left">
-                                    <div class="level-item">${customer.firstName} ${customer.lastName}
+                                    <div class="level-item">${customer.name}
                                         [email:${customer.email}]
                                     </div>
                                 </div>
                                 <div class="level-right">
-                                    <div class="level-item"><a href="#"><i class="fas fa-trash-alt" v-on:click="confirm"></i></a></div>
+                                    <div class="level-item"><a href="#"><i class="fas fa-trash-alt" v-on:click="confirm($event, ${customer.id}, '${customer.name}')"></i></a></div>
                                     <div class="level-item"><a href="customers/${customer.id}" ><i class="fas fa-edit"></i></a></div>
                                 </div>
                             </div>
@@ -59,8 +59,11 @@
     new Vue({
         el: '#app',
         methods: {
-            confirm: function() {
-                alert("click");
+            confirm: function(e, id, name) {
+                this.$dialog.confirm({
+                    message:'Delete '  + name +' ?',
+                    onConfirm: function() { window.location='customers/' + id + '/del' }
+                })
             }
         }
     });

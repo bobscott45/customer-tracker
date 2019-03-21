@@ -56,6 +56,10 @@ public class Customer {
         this.email = email;
     }
 
+    public String getName() {
+        return this.getFirstName() + ' ' + this.getLastName();
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
