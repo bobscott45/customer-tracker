@@ -29,7 +29,7 @@
 <section class="section">
     <div class="container">
         <div class="columns">
-            <div class="column is-6 is-offset-3">
+            <div class="column is-4 is-offset-4">
                 <div class="panel">
                     <h2 class="panel-heading">${customer.id>0 ? "Edit" : "New"} Customer</h2>
                     <div class="panel-block">
